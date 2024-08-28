@@ -8,6 +8,12 @@
     <div class="mb-3">
         <a class="btn btn-primary" href="{{ route('posts.create') }}">Create New Post</a>
     </div>
+    <div>
+        <form action="{{route('logout')}}" method="POST">
+            @csrf
+            <button type="submit" class="btn btn-danger">Logout</button>
+        </form>
+    </div>
     @if ($message = Session::get('success'))
         <div>{{ $message }}</div>
     @endif
